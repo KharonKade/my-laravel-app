@@ -10,21 +10,19 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::create('notes', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->text('content');
-            $table->text('subject');
-            $table->timestamps();
-        });
-    }
+{
+    Schema::table('notes', function (Blueprint $table) {
+        $table->text('subject')->default('General')->change();
+    });
+}
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('notes');
+        Schema::table('notes', function (Blueprint $table) {
+            //
+        });
     }
 };

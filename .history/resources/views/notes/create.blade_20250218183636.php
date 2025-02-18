@@ -44,10 +44,10 @@
                 <textarea
                     class="form-control @error('subject') is-invalid @enderror"
                     style="height:150px"
-                    name="subject"
-                    id="inputsubject"
-                    placeholder="subject"></textarea>
-                @error('subject')
+                    name="content"
+                    id="inputcontent"
+                    placeholder="content"></textarea>
+                @error('content')
                     <div class="form-text text-danger">{{ $message }}</div>
                 @enderror
             </div>
