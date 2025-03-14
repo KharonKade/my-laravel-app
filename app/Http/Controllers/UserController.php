@@ -41,7 +41,7 @@ class UserController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/');
+            return redirect()->intended('/notes');
         }
 
         return redirect('/login')->with('error', 'Invalid credentials. Please try again.');
